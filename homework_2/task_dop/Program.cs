@@ -48,7 +48,10 @@ bool isOdd (int testedNumber)
 
 void printArray (int[] arrayForPrint)
 {
+    if (limitN >= 2)
+    {
     Console.Write ("2 ");                               //чтоб удобнее начать, а число 1 судя по данным из интернета не считается простым, поэтому его нет в выводе
+    }
     for (int i = 0; i < arrayForPrint.Length; i++)
     {
         int a = arrayForPrint[i];
