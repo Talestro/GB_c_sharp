@@ -13,4 +13,4 @@ if (number < 0)
 
 int secondDigit = (number / 10) % 10;
 
-Console.WriteLine ("Second digit of " + number + " is " + secondDigit);
+Console.WriteLine ("Second digit is " + secondDigit);
