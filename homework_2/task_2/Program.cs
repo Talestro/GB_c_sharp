@@ -17,7 +17,7 @@ if (number < 100)
 }
 else 
 {
-    while (number < 999)
+    while (number > 999)
     {
         number /= 10;
     }
