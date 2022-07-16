@@ -10,7 +10,7 @@ int[] digitsOfNumber = new int [5];
 
 if (number <= 9999 || number >= 100000)
 {
-    Console.WriteLine("Please enter correct number");
+    Console.WriteLine("Incorrect number");
 }
 else
 {
