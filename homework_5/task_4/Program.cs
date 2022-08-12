@@ -9,10 +9,16 @@ int sizeOfArray = int.Parse(Console.ReadLine());
 int[] randomArray = new int [sizeOfArray];
 int[] resultArray = new int [sizeOfArray / 2];
 
+if(sizeOfArray % 2 != 0)
+{
+    Array.Resize(ref resultArray, resultArray.Length + 1);     
+}
+
 ArrayFill(randomArray);
+Console.WriteLine("Сгенерирован массив:");
 printArray(randomArray);
 getResultArrayOfElementMulti(randomArray, resultArray);
-Console.Write("\nРезультат произведения пар чисел: ");
+Console.WriteLine("\nРезультат произведения пар чисел: ");
 printArray(resultArray);
 
 
@@ -21,13 +27,12 @@ void ArrayFill (int [] array)
 {
     for(int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(2, 4);
+        array[i] = new Random().Next(0, 11);       //задал фиксированный предел, чтобы в очередной раз не запрашивать пользователя (можно заменить на переменную-предел, по аналогии с предыдущими задачами)
     }
 }
 
 void printArray (int [] array)
 {
-    Console.WriteLine("Сгенерирован массив:");
     for(int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
@@ -46,7 +51,6 @@ void getResultArrayOfElementMulti (int [] array, int [] resultArray)
     }
     if(array.Length % 2 != 0) //добавление последнего результата, если первый массив был с нечётным числом элементов
     {
-        Array.Resize(ref resultArray, resultArray.Length + 1);
         resultArray[k] = array[array.Length / 2];
     }
 }
